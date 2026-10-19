@@ -1,0 +1,37 @@
+{
+  "name": "gamematch",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/main.ts",
+    "demo": "bun run scripts/demo.ts",
+    "journey": "bun run demo/journey/server.ts",
+    "roi": "bun run scripts/roi.ts",
+    "calibrate": "bun run scripts/calibrate.ts",
+    "test": "bun test",
+    "test:core": "bun test ./test",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p dashboard && tsc --noEmit -p demo/journey",
+    "dashboard": "bun ./dashboard/index.html --port=3100",
+    "dashboard:build": "rm -rf dashboard/dist && bun build ./dashboard/index.html --minify --outdir dashboard/dist",
+    "fallow": "fallow dupes && fallow health --complexity --max-crap 1000",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "check": "bun run typecheck && bun run lint && bun run lint:strict && bun run fallow && bun test",
+    "lint:strict": "biome lint --config-path=biome.strict.json src scripts dashboard demo test"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "1.4.9",
+    "drizzle-orm": "0.45.4",
+    "echarts": "6.1.0",
+    "elysia": "1.4.30",
+    "tweakpane": "4.0.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.10",
+    "@tweakpane/core": "2.0.5",
+    "@types/bun": "1.4.3",
+    "drizzle-kit": "0.31.11",
+    "fallow": "3.34.1",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,0 +1,78 @@
+/*
+ * Design tokens: one dark house theme (warm charcoal surfaces, warm light text, a brass accent for
+ * actions, focus and selection) and a deliberate chart accent set: teal, violet, amber, coral and
+ * sky. Every text colour clears WCAG AA (4.5:1) on every surface it sits on;
+ * test/dashboard/contrast.test.ts checks the pairs. Each entity keeps one colour on every chart:
+ * Android sky, iOS violet; hot coral, warm amber, cold teal. A value's sign is green (positive)
+ * or red (negative), on charts and headline figures alike. palette.ts reads these for ECharts, so no other file
+ * holds a hex value.
+ */
+:root {
+  color-scheme: dark;
+
+  /* surfaces, dark → light */
+  --bg: #0e1012;
+  --surface: #16191c;
+  --surface-2: #1c2024;
+  --surface-3: #242a2f;
+  --border: #2b3137;
+  --border-strong: #3a4147;
+  --grid: #2a3035;
+
+  /* text */
+  --ink: #f4f0ea;
+  --ink-2: #c9c3b9;
+  --muted: #a8a197;
+
+  /* accent: actions, focus, selection only */
+  --accent: #c8924a;
+  --accent-strong: #dca85f;
+  --accent-ink: #120d06;
+  --accent-soft: rgba(200, 146, 74, 0.13);
+  --accent-ring: rgba(200, 146, 74, 0.5);
+
+  /* charts */
+  --android: #5cc8ff;
+  --ios: #b896ff;
+  --neutral: #7b838b;
+  --good: #4ade80;
+  --bad: #f87171;
+  --good-fill: #14532d;
+  --bad-fill: #7f1d1d;
+  --warn: #f5c15c;
+
+  /* accent set (teal, violet, amber, coral, sky) and the segment colours drawn from it */
+  --teal: #3fd6b8;
+  --violet: #b896ff;
+  --amber: #f5c15c;
+  --coral: #ff8f7e;
+  --sky: #5cc8ff;
+  --hot: #ff8f7e;
+  --warm: #f5c15c;
+  --cold: #3fd6b8;
+
+  /* depth: soft shadow, rounded cards, a faint top-lit gradient */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  --card:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 60%), var(--surface);
+
+  /* spacing: 8px scale (4 for hairline gaps only) */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 16px;
+  --s4: 24px;
+  --s5: 32px;
+  --s6: 48px;
+  --rail: 384px;
+
+  /* type: four sizes */
+  --t-small: 14px; /* labels, meta, rail controls, chart axes */
+  --t-body: 16px; /* body, chart titles */
+  --t-head: 20px; /* page title, secondary figures */
+  --t-figure: 30px; /* key numbers */
+
+  --font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameMatch Journey</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.ts"></script>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <h1>GameMatch · one player's journey</h1>
+        <p>A Freecash ad inside the game Alex already plays → a second game offer → install credited, user rewarded, advertiser billed.</p>
+      </div>
+      <div class="top-actions">
+        <span id="clock" class="clock"></span>
+        <button type="button" id="reset" class="btn">Reset</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="col phone-col">
+        <div class="phone" id="phone" data-platform="android">
+          <div class="phone-screen">
+            <div class="island"></div>
+            <div class="statusbar"><span id="sb-time">18:30</span><span class="sb-icons"><i style="width:15px;height:9px"></i><i style="width:13px;height:9px"></i><i style="width:22px;height:11px;border-radius:3px"></i></span></div>
+            <div id="screen" class="screen"></div>
+          </div>
+        </div>
+        <div class="phone-tabs">
+          <button type="button" data-tab="screen" class="on">Screen</button>
+          <button type="button" data-tab="progress" disabled>Progress page</button>
+        </div>
+        <p id="caption" class="caption"></p>
+      </section>
+
+      <section class="col centre">
+        <div class="card" id="steps"></div>
+        <div class="card" id="notes"></div>
+        <div class="card" id="outcome"></div>
+        <div class="card" id="persona"></div>
+        <div class="card" id="network"></div>
+      </section>
+
+      <section class="col right">
+        <div class="card timeline-card">
+          <header><h2>Hops between parties</h2><span class="meta" id="hop-count"></span></header>
+          <div class="legend">
+            <label><input type="checkbox" id="show-admin" checked /> Show back-office calls</label>
+          </div>
+          <ol class="timeline" id="timeline"></ol>
+        </div>
+        <div class="card ledger-card" id="ledger"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paid Re-engagement Economics</title>
+    <link rel="stylesheet" href="./tokens.css" />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <main class="main">
+        <header class="top">
+          <div>
+            <h1>Paid re-engagement economics</h1>
+            <p class="lede">Unit economics of paid re-engagement for linked users. Every input is editable and carries its sources.</p>
+          </div>
+          <button class="btn" type="button" id="copy">Copy link</button>
+        </header>
+
+        <section class="numbers" aria-label="Key numbers">
+          <table class="kn" id="kn"></table>
+          <div class="test">
+            <span class="test-title">Holdout test</span>
+            <dl id="test"></dl>
+          </div>
+        </section>
+
+        <ul class="issues" id="issues"></ul>
+
+        <section class="charts" id="charts"></section>
+        <section class="noted" id="noted" aria-label="Inputs that differ from Working assumptions"></section>
+        <details class="sources" id="sources">
+          <summary>Sources <span class="muted" id="sources-count"></span></summary>
+          <div id="sources-list"></div>
+        </details>
+      </main>
+
+      <aside class="rail" aria-label="Inputs">
+        <section class="scn">
+          <label class="scn-label" for="scn-select">Scenario</label>
+          <div class="scn-row">
+            <select id="scn-select"></select>
+          </div>
+          <p class="muted scn-desc" id="scn-desc"></p>
+          <div class="scn-actions">
+            <button class="btn primary" type="button" id="scn-partner" title="Save the current inputs as the Partner inputs scenario">Save as Partner inputs</button>
+            <button class="btn" type="button" id="scn-save">Save</button>
+            <button class="btn" type="button" id="scn-saveas">Save as…</button>
+            <button class="btn" type="button" id="scn-revert" title="Discard changes since this scenario was loaded or saved">Revert</button>
+            <details class="menu" id="scn-menu">
+              <summary class="btn">More</summary>
+              <div class="menu-list">
+                <button type="button" id="scn-rename">Rename…</button>
+                <button type="button" id="scn-duplicate">Duplicate</button>
+                <button type="button" id="scn-delete">Delete</button>
+              </div>
+            </details>
+          </div>
+        </section>
+        <div class="pane-host" id="pane"></div>
+      </aside>
+    </div>
+
+    <div class="pop" id="prov" role="dialog" aria-labelledby="prov-title" hidden>
+      <p class="pop-title" id="prov-title"></p>
+      <div id="prov-cite"></div>
+      <fieldset id="prov-source">
+        <legend>This value is</legend>
+        <label><input type="radio" name="prov-source" value="default" /> Default (see Sources)</label>
+        <label><input type="radio" name="prov-source" value="partner" /> Partner-supplied</label>
+        <label><input type="radio" name="prov-source" value="assumption" /> Assumption</label>
+      </fieldset>
+      <div class="fields">
+        <label class="field">Note <input type="text" id="prov-note" maxlength="200" placeholder="e.g. average Moloco US Q3" /></label>
+        <label class="field">Date <input type="text" id="prov-date" inputmode="numeric" maxlength="10" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" /></label>
+      </div>
+      <div class="pop-actions"><button class="btn primary" type="button" id="prov-done">Done</button></div>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

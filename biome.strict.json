@@ -1,0 +1,55 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+  "root": true,
+  "vcs": {
+    "enabled": false
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/drizzle",
+      "!**/dashboard/dist",
+      "!**/docs",
+      "!**/research",
+      "!**/tools"
+    ]
+  },
+  "formatter": {
+    "enabled": false
+  },
+  "assist": {
+    "enabled": false
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "none"
+    }
+  },
+  "plugins": [
+    "./tools/biome/strict/no-array-filter-map.grit",
+    "./tools/biome/strict/no-chained-type-assertions.grit",
+    "./tools/biome/strict/no-compat-names.grit",
+    "./tools/biome/strict/no-conditional-empty-object-spread.grit",
+    "./tools/biome/strict/no-known-value-widening.grit",
+    "./tools/biome/strict/no-literal-timer-delay.grit",
+    "./tools/biome/strict/no-module-mocking.grit",
+    "./tools/biome/strict/no-object-parameters.grit",
+    "./tools/biome/strict/no-reduce-accumulator-copy.grit",
+    "./tools/biome/strict/no-reflect-apply.grit",
+    "./tools/biome/strict/no-reflect-get.grit",
+    "./tools/biome/strict/no-runtime-typeof.grit",
+    "./tools/biome/strict/no-shape-in-symbol-names.grit",
+    "./tools/biome/strict/no-skipped-tests.grit",
+    "./tools/biome/strict/no-swallowed-error.grit",
+    "./tools/biome/strict/no-unknown-parameters.grit",
+    "./tools/biome/strict/no-unknown-returns.grit",
+    "./tools/biome/strict/no-unknown-type-aliases.grit",
+    "./tools/biome/strict/no-unsafe-dictionary-type.grit",
+    "./tools/biome/strict/no-weak-assertion.grit",
+    "./tools/biome/strict/no-widen-then-assert.grit",
+    "./tools/biome/strict/require-safety-comment-for-type-assertion.grit"
+  ]
+}
